@@ -10,6 +10,12 @@ internal class Program
         Console.ReadKey();
 
         Console.WriteLine(_number);
-        string text;
+        string text = "Test";
+        Console.WriteLine(text);
+
+        //DateTime dt1 = DateTime.TryParse("04.05.2024"); // need one more parameter, returns bool
+        DateTime dt2 = DateTime.Parse("04.05.2024");
+        //DateTime dt3 = new DateTime("04.05.2024"); // there is no constructor with string parameter
+        //DateTime dt4 = (DateTime)"04.05.2024"; // there is no explicit conversion from string
     }
 }

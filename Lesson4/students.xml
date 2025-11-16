@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <Id>1</Id>
+    <LastName>Rosenberg</LastName>
+    <FirstName>Avrumi</FirstName>
+  </Student>
+  <Student>
+    <Id>2</Id>
+    <LastName>Hartuv</LastName>
+    <FirstName>Israel</FirstName>
+  </Student>
+  <Student>
+    <Id>3</Id>
+    <LastName>Eliahu</LastName>
+  </Student>
+</ArrayOfStudent>
