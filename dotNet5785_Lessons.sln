@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson3", "Lesson3\Lesson3.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson4", "Lesson4\Lesson4.csproj", "{D455A47D-713B-4BDC-854A-01F398301B03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson6Printer", "Lesson6Printer\Lesson6Printer.csproj", "{790EDEBD-9421-4734-A094-47ACC48FF565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson6WPF", "Lesson6WPF\Lesson6WPF.csproj", "{61B7CA25-94FC-46EA-9649-AF7EBE518C89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{D455A47D-713B-4BDC-854A-01F398301B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D455A47D-713B-4BDC-854A-01F398301B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D455A47D-713B-4BDC-854A-01F398301B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{790EDEBD-9421-4734-A094-47ACC48FF565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{790EDEBD-9421-4734-A094-47ACC48FF565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{790EDEBD-9421-4734-A094-47ACC48FF565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{790EDEBD-9421-4734-A094-47ACC48FF565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B7CA25-94FC-46EA-9649-AF7EBE518C89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B7CA25-94FC-46EA-9649-AF7EBE518C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B7CA25-94FC-46EA-9649-AF7EBE518C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B7CA25-94FC-46EA-9649-AF7EBE518C89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
