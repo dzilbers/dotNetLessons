@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 
+namespace Lesson3;
+
 class Program
 {
     static bool odd(int number) => number % 2 == 1;
@@ -19,6 +21,8 @@ class Program
         //Console.WriteLine(anonymousObject.Equals(anonym1));
         //Console.WriteLine(anonymousObject);
         //var anonym2 = anonymousObject with { Name = "Dani" };
+        //PrintInfo("", anonymousObject.GetType());
+        //Console.WriteLine(anonymousObject.GetType().Name);
         //Console.WriteLine("-----------------------------------");
         //var anonymousOther = new { Id = "123", Name = 3.5 };
         //printInfo(anonymousOther.GetType());
@@ -27,12 +31,24 @@ class Program
         //Console.WriteLine(anonymousOther.Equals(anonymousOther1));
         //object[] array = new object[5];
         //array[1] = anonym2;
+        //var anonymousObject2 = new { Id = 2222, Name = "Yossi" };
+        //var anonymousObject2 = new { Name = "Yossi", Id = 2222 };
+        //var anonymousObject2 = new { Id = 2222, Name = 4 };
+        //Console.WriteLine(anonymousObject2.GetType().Name);
 
+        //Console.WriteLine("" + anonymousObject.GetHashCode()
+        //    + " : " + anonymousObject2.GetHashCode());
+        //Console.WriteLine("Equals = " + anonymousObject.Equals(anonymousObject2));
+        //Console.WriteLine("== : " + (anonymousObject == anonymousObject2));
         //string str = "123";
         //int i = str.ToInt();
         //int j = "234".ToInt();
 
+        //Console.WriteLine("123"[1]);
 
+        //anonymousObject.ToStringProperty();
+        //Console.WriteLine("-----------------------------------");
+        //DateTime.Now.ToStringProperty();
         Console.WriteLine("DateTime.Now:");
         DateTime.Now.ToStringProperty();
         Console.WriteLine("Anonymous object:");
@@ -40,25 +56,43 @@ class Program
         Console.WriteLine("MyClass object:");
         new MyClass().ToStringProperty();
 
+        //DateTime? date = null;
+        ////if (date == null) ;
+        //DateTime date3 = (DateTime)(date ?? DateTime.Now);
         //var myObject = new MyGenericClass<int, string>();
         //myObject!.MyFunction(3, "I am here");
 
+        //MyDelegate myDel = null;
+        ////Console.WriteLine(myDel(3, "abc"));
+        //Console.WriteLine(myDel?.Invoke(3, "abc"));
 
+        //MyClass obj = null;
+        //obj?.f1();
+        //var v = obj?.f2();
         //foreach (var number in func())
         //    Console.WriteLine(number);
 
-        //foreach (var number in func())
-        //    Console.WriteLine(number);
+        //MD md = null;
+        //md += MyF1;
+        //md += MyF2;
+        //md += MyF3;
+        //md();
 
-        //SomeDelegate myDlgt = new SomeDelegate(sum);
-        //myDlgt += mult;
-        //myDlgt += sub;
-        //myDlgt -= sum;
+        SomeDelegate myDlgt = new SomeDelegate(sum);
+        myDlgt += mult;
+        myDlgt += sub;
+        myDlgt -= sum;
         //Console.WriteLine(myDlgt!(3, 2));
 
-        //Console.WriteLine("");
-        //foreach (var d in myDlgt.GetInvocationList())
+        //foreach (var d in myDlgt!.GetInvocationList())
         //    Console.WriteLine(d.Method);
+        //if (myDlgt is Delegate)
+        //    Console.WriteLine("myDlgt is Delegate == true");
+        //foreach (var item in myDlgt!.GetInvocationList())
+        //    Console.WriteLine(item?.DynamicInvoke(3, 2));
+        //Console.WriteLine(myDlgt(3, 2));
+        var fList = myDlgt?.GetInvocationList();
+        Console.WriteLine(fList?[0].DynamicInvoke(3, 2));
 
         //if (myDlgt is Delegate) Console.WriteLine("myDlgt is Delegate == true");
         //foreach (var item in myDlgt.GetInvocationList()) // (Delegate item …)
@@ -119,6 +153,9 @@ class Program
     };
 
     static void printInfo(Type type) => printInfo("", type);
+    static public int sum(int num1, int num2) { return num1 + num2; }
+    static public int mult(int num1, int num2) { return num1 * num2; }
+    static public int sub(int num1, int num2) { return num1 - num2; }
 
     static void printInfo(string suffix, Type type)
     {
@@ -214,15 +251,12 @@ class Program
         //    Console.WriteLine(suffix + "name: {0,-32} type: {1,-11} in: {2}",
         //                      item.Name, item.MemberType, item.DeclaringType?.Name);
     }
+    public static void MyF1() => Console.WriteLine("F1");
+    public static void MyF2() => Console.WriteLine("F2");
+    public static void MyF3() => Console.WriteLine("F3");
 }
 
 public delegate int SomeDelegate(int x, int y);
-
-class MyClass
-{
-    public int Id;
-    public string? Name;
-}
 
 class MyGenericClass<T, U> // where T : struct // where T : class
 {
@@ -237,7 +271,7 @@ class MyGenericClass<T, U> // where T : struct // where T : class
 static class MyTools
 {
     public static int ToInt(this string str) => int.Parse(str);
-
+    
     public static void ToStringProperty<T>(this T t)
     {
         string str = "";
@@ -249,4 +283,11 @@ static class MyTools
 enum Category { User, Admin }
 record MyRecord (int ID, string Name, Category Category = Category.User);
 
+class MyClass
+{
+    public int Id;
+    public string? Name;
 
+    //public void f1() { }
+    //public int f2() => 0;
+}
