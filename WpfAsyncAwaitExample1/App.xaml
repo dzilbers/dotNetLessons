@@ -1,0 +1,28 @@
+﻿<Application x:Class="WpfAsyncAwaitExample1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:WpfAsyncAwaitExample1"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <FontFamily x:Key="AppGlobalFontFamily">Segoe UI</FontFamily>
+        <sys:Double x:Key="AppGlobalFontSize">28</sys:Double>
+        <FontWeight x:Key="AppGlobalFontWeight">SemiBold</FontWeight>
+        <Style x:Key="AppGlobalFont" TargetType="Control">
+            <Setter Property="FontFamily" Value="{StaticResource AppGlobalFontFamily}" />
+            <Setter Property="FontSize" Value="{StaticResource AppGlobalFontSize}" />
+            <Setter Property="FontWeight" Value="{StaticResource AppGlobalFontWeight}" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+        </Style>
+        <Style TargetType="{x:Type Window}" BasedOn="{StaticResource AppGlobalFont}">
+            <Setter Property="FlowDirection" Value="RightToLeft" />
+        </Style>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource AppGlobalFont}"/>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="{StaticResource AppGlobalFontFamily}" />
+            <Setter Property="FontSize" Value="{StaticResource AppGlobalFontSize}" />
+            <Setter Property="FontWeight" Value="{StaticResource AppGlobalFontWeight}" />
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+        </Style>
+    </Application.Resources>
+</Application>

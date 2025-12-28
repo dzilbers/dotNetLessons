@@ -78,10 +78,10 @@ class Program
         //md += MyF3;
         //md();
 
-        SomeDelegate myDlgt = new SomeDelegate(sum);
-        myDlgt += mult;
-        myDlgt += sub;
-        myDlgt -= sum;
+        SomeDelegate myDlgt = new(Sum);
+        myDlgt += Mult;
+        myDlgt += Sub;
+        myDlgt -= Sum;
         //Console.WriteLine(myDlgt!(3, 2));
 
         //foreach (var d in myDlgt!.GetInvocationList())
@@ -153,9 +153,9 @@ class Program
     };
 
     static void printInfo(Type type) => printInfo("", type);
-    static public int sum(int num1, int num2) { return num1 + num2; }
-    static public int mult(int num1, int num2) { return num1 * num2; }
-    static public int sub(int num1, int num2) { return num1 - num2; }
+    static public int Sum(int num1, int num2) { return num1 + num2; }
+    static public int Mult(int num1, int num2) { return num1 * num2; }
+    static public int Sub(int num1, int num2) { return num1 - num2; }
 
     static void printInfo(string suffix, Type type)
     {

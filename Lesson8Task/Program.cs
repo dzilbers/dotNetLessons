@@ -1,23 +1,23 @@
 ﻿static class Program
 {
-    static async Task Main(string[] args)
+    static async Task Main()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
         // This is the entry point for the program (the Main Thread)
         // Starting from C# 7.1, Main can also be async
-        Console.WriteLine($"[Main Thread: {Environment.CurrentManagedThreadId}]" + $" הלקוח ניגש לקופה ומזמין קפה.".R());
+        Console.WriteLine($"[Main Thread: {Environment.CurrentManagedThreadId}]" + $" הלקוח ניגש לקופה ומזמין קפה.".r());
 
         // 1. הזמנה: קריאה למתודה האסינכרונית
-        Console.WriteLine($"[Main Thread: {Environment.CurrentManagedThreadId}]" + $" הזמנת הקפה נשלחה למוזגת...".R());
-        var coffeeTask = OrderCoffeeAsync();
+        Console.WriteLine($"[Main Thread: {Environment.CurrentManagedThreadId}]" + $" הזמנת הקפה נשלחה למוזגת...".r());
+        var coffeeTask = orderCoffeeAsync();
 
         // 2. (הזמזם) Task-קבלת ה
-        Console.WriteLine($"[Main Thread: {Environment.CurrentManagedThreadId}]" + $" .(Task-" + $" קיבלתי את הזמזם )ה".R());
+        Console.WriteLine($"[Main Thread: {Environment.CurrentManagedThreadId}]" + $" .(Task-" + $" קיבלתי את הזמזם )ה".r());
 
         // 3. (ההמתנה הלא חוסמת) await-ה:
         // !משתחרר כאן. הוא לא מחכה Main Thread-ה
-        Console.WriteLine($"[Main Thread: {Environment.CurrentManagedThreadId}]" + $" אני הולך לשבת, לקרוא עיתון ולחכות לצפצוף...".R());
+        Console.WriteLine($"[Main Thread: {Environment.CurrentManagedThreadId}]" + $" אני הולך לשבת, לקרוא עיתון ולחכות לצפצוף...".r());
 
         // הנוכחי משוחרר Thread-כאן הקסם קורה. ה .await-נקודת ה
         string myCoffee = await coffeeTask;
@@ -25,26 +25,26 @@
         // 4. סיום המשימה והמשך ביצוע (Continuation):
         // !Thread-כשהגענו לכאן, הפעולה הסתיימה. שימו לב למזהה ה
         // .המקורי Main Thread-שונה מה Thread סביר להניח שזה יהיה ,Console באפליקציית
-        Console.WriteLine($"--- הזמזם צפצף! ---".R());
-        Console.WriteLine($"[Continuation Thread: {Environment.CurrentManagedThreadId}]" + $" לקחתי את הקפה: ".R() + $"{myCoffee}");
-        Console.WriteLine($"[Continuation Thread: {Environment.CurrentManagedThreadId}]" + $" ממשיך בסדר היום שלי.".R());
+        Console.WriteLine($"--- הזמזם צפצף! ---".r());
+        Console.WriteLine($"[Continuation Thread: {Environment.CurrentManagedThreadId}]" + $" לקחתי את הקפה: ".r() + $"{myCoffee}");
+        Console.WriteLine($"[Continuation Thread: {Environment.CurrentManagedThreadId}]" + $" ממשיך בסדר היום שלי.".r());
 
         Console.Read(); // כדי שהחלון לא ייסגר מיד
     }
 
     // מתודה שמדמה את עבודת המוזגת (פעולה אסינכרונית ש"לוקחת זמן")
-    static async Task<string> OrderCoffeeAsync()
+    static async Task<string> orderCoffeeAsync()
     {
-        Console.WriteLine($"   --> [Worker Thread: {Environment.CurrentManagedThreadId}]" + $" המוזגת מתחילה להכין את הקפה...".R());
+        Console.WriteLine($"   --> [Worker Thread: {Environment.CurrentManagedThreadId}]" + $" המוזגת מתחילה להכין את הקפה...".r());
 
         // 
         // .(כמו קריאה לרשת או לדיסק שלוקחת 3 שניות) I/O הדמיה של פעולת
         // .שצוין בשורה הקודמת משתחרר בזמן ההמתנה הזו Thread-גם כאן, ה
         await Task.Delay(3000);
 
-        Console.WriteLine($"   --> [Worker Thread: {Environment.CurrentManagedThreadId}]" + $" המוזגת סיימה! הקפה מוכן.".R());
-        return "אספרסו כפול חם".R();
+        Console.WriteLine($"   --> [Worker Thread: {Environment.CurrentManagedThreadId}]" + $" המוזגת סיימה! הקפה מוכן.".r());
+        return "אספרסו כפול חם".r();
     }
 
-    static string R(this String str) => new(str.Reverse().ToArray());
+    static string r(this String str) => new([..str.Reverse()]);
 }

@@ -21,8 +21,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson6-CLI", "Lesson6-CLI\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson6Wpf", "Lesson6Wpf\Lesson6Wpf.csproj", "{C21FB074-DE47-4DD5-A7E8-63BFE7C78317}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson6WPFX", "Lesson6WPF\Lesson6WPFX.csproj", "{61B7CA25-94FC-46EA-9649-AF7EBE518C89}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalFacade", "DalFacade\DalFacade.csproj", "{9F76D263-9C5E-4BA7-9B89-61DA2304999D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalList", "DalList\DalList.csproj", "{2E910328-BC93-430B-88DA-2591D411FE1C}"
@@ -37,9 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Async", "Async\Async.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfBindingSmall", "WpfBindingSmall\WpfBindingSmall.csproj", "{F671DEBF-3A20-4154-9865-2256BDE925BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "..\..\dotNet5785_Lessons\Test\Test.csproj", "{2CB12D27-8CB1-2E08-8726-667F110A16B8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson8Task", "Lesson8Task\Lesson8Task.csproj", "{44E9E00B-A20C-44A8-8190-7179D111B809}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAsyncAwaitExample1", "WpfAsyncAwaitExample1\WpfAsyncAwaitExample1.csproj", "{39412CE3-006C-44B0-8DFE-16E88977FF4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,14 +109,14 @@ Global
 		{F671DEBF-3A20-4154-9865-2256BDE925BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F671DEBF-3A20-4154-9865-2256BDE925BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F671DEBF-3A20-4154-9865-2256BDE925BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2CB12D27-8CB1-2E08-8726-667F110A16B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CB12D27-8CB1-2E08-8726-667F110A16B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CB12D27-8CB1-2E08-8726-667F110A16B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CB12D27-8CB1-2E08-8726-667F110A16B8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{44E9E00B-A20C-44A8-8190-7179D111B809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{44E9E00B-A20C-44A8-8190-7179D111B809}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44E9E00B-A20C-44A8-8190-7179D111B809}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44E9E00B-A20C-44A8-8190-7179D111B809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39412CE3-006C-44B0-8DFE-16E88977FF4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39412CE3-006C-44B0-8DFE-16E88977FF4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39412CE3-006C-44B0-8DFE-16E88977FF4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39412CE3-006C-44B0-8DFE-16E88977FF4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
