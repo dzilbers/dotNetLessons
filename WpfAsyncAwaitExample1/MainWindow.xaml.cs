@@ -27,13 +27,15 @@ public partial class MainWindow : Window
 
     public MainWindow() => InitializeComponent();
 
+    private static Random random = new();
+
     private async void startButton_Click(object sender, RoutedEventArgs e)
     {
         Button clickedButton = (sender as Button)!;
         if (clickedButton is null) return;
 
         // While still in UI thread, update the UI to show loading state
-        StatusText = "מתחיל בעבודה כבדה, אנא המתן...";
+        StatusText = "...מתחיל בעבודה כבדה, אנא המתן";
         IsLoading = true; // Initiate progress bar animation
         clickedButton.IsEnabled = false; // disable the clicked button
 
@@ -45,7 +47,8 @@ public partial class MainWindow : Window
             string result = await Task.Run(() =>
             {
                 Thread.Sleep(3000); // Simulate heavy work (e.g., I/O, CPU-bound, etc.) for 3 seconds
-                return "העבודה הסתיימה בהצלחה! הנתונים עובדו.";
+                return random.NextDouble() < 0.5 ? "העבודה הסתיימה בהצלחה! הנתונים עובדו."
+                                                 : throw new Exception("אופס!!!");
             });
 
             // Due to the captured Synchronization Context, we are back on the UI thread here
